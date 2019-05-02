@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        tools:context=".RegistroActivity">
+    <LinearLayout android:layout_width="match_parent"
+                  android:background="@color/colorPrimary"
+                  android:orientation="vertical"
+                  android:layout_height="100dp">
+        <TextView android:layout_width="match_parent"
+                  android:text="AGREGAR ASESORÍA"
+                  android:textAlignment="center"
+                  android:textSize="30dp"
+                  android:layout_marginTop="40dp"
+                  android:textColor="#ffff"
+                  android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <ScrollView android:layout_width="match_parent"
+                android:layout_height="match_parent">
+        <LinearLayout android:layout_width="match_parent"
+                      android:orientation="vertical"
+                      android:layout_marginTop="30dp"
+                      android:layout_height="wrap_content">
+
+            <Spinner android:layout_width="match_parent"
+                     android:id="@+id/lstAgregar_materia"
+                     android:layout_marginTop="10dp"
+                     android:layout_marginLeft="20dp"
+                     android:layout_marginRight="20dp"
+                     android:background="@color/colorGris"
+                     android:padding="10dp"
+                     android:popupBackground="@color/colorGris"
+                     android:layout_height="wrap_content"></Spinner>
+            <Spinner android:layout_width="match_parent"
+                     android:id="@+id/lstAgregar_dia"
+                     android:layout_marginTop="10dp"
+                     android:layout_marginLeft="20dp"
+                     android:layout_marginRight="20dp"
+                     android:background="@color/colorGris"
+                     android:padding="10dp"
+                     android:layout_height="wrap_content">
+            </Spinner>
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_margin="20dp"
+                          android:orientation="horizontal"
+                          android:layout_height="wrap_content">
+                <Spinner android:layout_width="match_parent"
+                         android:id="@+id/lstAgregar_horaIni"
+                         android:layout_weight="1"
+                         android:layout_marginRight="10dp"
+                         android:background="@color/colorGris"
+                         android:padding="10dp"
+                         android:popupBackground="@color/colorGris"
+                         android:layout_height="wrap_content"></Spinner>
+                <Spinner android:layout_width="match_parent"
+                         android:id="@+id/lstAgregar_horaFin"
+                         android:layout_weight="1"
+                         android:layout_marginLeft="10dp"
+                         android:background="@color/colorGris"
+                         android:padding="10dp"
+                         android:layout_height="wrap_content">
+                </Spinner>
+            </LinearLayout>
+            <LinearLayout android:layout_width="match_parent"
+                          android:orientation="horizontal"
+                          android:layout_marginTop="60dp"
+                          android:layout_marginLeft="20dp"
+                          android:layout_marginRight="20dp"
+                          android:layout_height="wrap_content">
+                <Button android:layout_width="match_parent"
+                        android:text="Cancelar"
+                        android:layout_gravity="center"
+                        android:textColor="@color/colorTexto"
+                        android:padding="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:id="@+id/btnAgregar_cancelar"
+                        android:background="@drawable/btn_gris"
+                        android:layout_height="wrap_content"/>
+                <Button android:layout_width="match_parent"
+                        android:text="Agregar"
+                        android:layout_gravity="center"
+                        android:textColor="#ffffff"
+                        android:padding="10dp"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/btnAgregar_agregar"
+                        android:background="@drawable/btn_azul_bordes"
+                        android:layout_height="wrap_content"/>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
