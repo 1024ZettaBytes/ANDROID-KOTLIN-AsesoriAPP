@@ -8,6 +8,7 @@ import android.view.Window
 import android.widget.*
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.DocumentSnapshot
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.QuerySnapshot
@@ -95,8 +96,13 @@ class HorariosActivity : AppCompatActivity() {
 
 
 
-        btnAlumno_cerrarSesion.setOnClickListener() {
-            finish()
+        btnAlumno_cerrarSesion.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            var intentLogin = Intent(this, LoginActivity::class.java)
+            intentLogin.flags =
+                Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intentLogin)
+
         }
         cargarDatos()
 

@@ -107,6 +107,8 @@ class LoginActivity : AppCompatActivity() {
                                 intent = Intent(this, AsesorActivity::class.java)
                                 intent.putExtra("campus", document.get("campus").toString().toInt())
                                 intent.putExtra("carrera", document.get("carrera").toString())
+                                intent.putExtra("nombreAsesor", document.get("nombre").toString())
+                                intent.putExtra("correoAsesor", document.id)
                                 pgsBarCargaLogin.visibility = View.GONE
                                 intent.flags =
                                     Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
