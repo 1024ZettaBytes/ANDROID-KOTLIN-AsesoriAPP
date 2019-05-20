@@ -51,20 +51,15 @@
                           android:layout_height="wrap_content">
                 <Spinner android:layout_width="match_parent"
                          android:id="@+id/lstAgregar_horaIni"
-                         android:layout_weight="1"
                          android:layout_marginRight="10dp"
                          android:background="@color/colorGris"
                          android:padding="10dp"
+                         android:layout_weight="1"
                          android:popupBackground="@color/colorGris"
                          android:layout_height="wrap_content"></Spinner>
-                <Spinner android:layout_width="match_parent"
-                         android:id="@+id/lstAgregar_horaFin"
-                         android:layout_weight="1"
-                         android:layout_marginLeft="10dp"
-                         android:background="@color/colorGris"
-                         android:padding="10dp"
-                         android:layout_height="wrap_content">
-                </Spinner>
+                <LinearLayout android:layout_width="match_parent"
+                              android:layout_weight="1"
+                              android:layout_height="wrap_content"></LinearLayout>
             </LinearLayout>
             <LinearLayout android:layout_width="match_parent"
                           android:orientation="horizontal"

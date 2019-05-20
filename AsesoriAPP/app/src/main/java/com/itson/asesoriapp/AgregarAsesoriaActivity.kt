@@ -43,14 +43,7 @@ class AgregarAsesoriaActivity : AppCompatActivity() {
         adaptadorHoras.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
         lstAgregar_horaIni.adapter = adaptadorHoras
 
-        listaHoras = arrayOf("Hora fin","08:00","09:00","10:00","11:00","12:00", "13:00")
-        adaptadorHoras = ArrayAdapter(
-            this, // Context
-            android.R.layout.simple_spinner_item, // Layout
-            listaHoras// Array
-        )
-        adaptadorHoras.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line)
-        lstAgregar_horaFin.adapter = adaptadorHoras
+
         btnAgregar_cancelar.setOnClickListener(){
             finish()
         }

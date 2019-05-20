@@ -92,7 +92,7 @@ class LoginActivity : AppCompatActivity() {
                 val document = task.result
                 if (document.exists()) {
                     intent = Intent(this, HorariosActivity::class.java)
-                    intent.putExtra("campus", document.get("campus").toString())
+                    intent.putExtra("campus", document.get("campus").toString().toInt())
                     intent.putExtra("carrera", document.get("carrera").toString())
                     pgsBarCargaLogin.visibility = View.GONE
                     intent.flags =
@@ -105,7 +105,7 @@ class LoginActivity : AppCompatActivity() {
                             val document = task.result
                             if (document.exists()) {
                                 intent = Intent(this, AsesorActivity::class.java)
-                                intent.putExtra("campus", document.get("campus").toString())
+                                intent.putExtra("campus", document.get("campus").toString().toInt())
                                 intent.putExtra("carrera", document.get("carrera").toString())
                                 pgsBarCargaLogin.visibility = View.GONE
                                 intent.flags =
