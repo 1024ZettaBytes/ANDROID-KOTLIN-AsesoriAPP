@@ -4,20 +4,29 @@
 
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
+            android:icon="@drawable/asesoriapp_icon"
             android:label="@string/app_name"
-            android:roundIcon="@mipmap/ic_launcher_round"
+            android:roundIcon="@drawable/asesoriapp_icon"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".AgregarAsesoriaActivity">
+        <activity android:name=".ContraseniaActivity"
+        android:screenOrientation="portrait"
+        >
         </activity>
-        <activity android:name=".AsesorActivity">
+        <activity android:name=".AgregarAsesoriaActivity"
+        android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".DetalleAsesoriaActivity">
+        <activity android:name=".AsesorActivity"
+        android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".HorariosActivity">
+        <activity android:name=".DetalleAsesoriaActivity"
+        android:screenOrientation="portrait">
         </activity>
-        <activity android:name=".RegistroActivity">
+        <activity android:name=".HorariosActivity"
+        android:screenOrientation="portrait">
+        </activity>
+        <activity android:name=".RegistroActivity"
+        android:screenOrientation="portrait">
         </activity>
         <activity
                 android:name=".LoginActivity"

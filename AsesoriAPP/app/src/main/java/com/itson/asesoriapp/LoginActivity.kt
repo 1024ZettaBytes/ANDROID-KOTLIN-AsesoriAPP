@@ -47,6 +47,11 @@ class LoginActivity : AppCompatActivity() {
         btn_login.setOnClickListener() {
             iniciarSesion()
         }
+        btn_contra.setOnClickListener(){
+            val intentContra = Intent(this,  ContraseniaActivity::class.java)
+            startActivity(intentContra)
+        }
+
     }
 
     private fun iniciarSesion() {
@@ -77,7 +82,7 @@ class LoginActivity : AppCompatActivity() {
                 })
 
         } else {
-            Toast.makeText(this, "Please fill up the Credentials :|", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Ingrese sus datos", Toast.LENGTH_SHORT).show()
         }
 
     }

@@ -110,7 +110,7 @@
                       android:textSize="20dp"
                       android:layout_height="wrap_content"/>
             <EditText android:layout_width="match_parent"
-                      android:hint="Contraseña(8+ caractéres)..."
+                      android:hint="Contraseña(9+ caractéres)..."
                       android:layout_marginTop="10dp"
                       android:layout_marginLeft="20dp"
                       android:layout_marginRight="20dp"

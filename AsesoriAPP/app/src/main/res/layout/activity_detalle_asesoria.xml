@@ -80,7 +80,7 @@
                     <LinearLayout android:layout_width="match_parent"
                                   android:orientation="horizontal"
                                   android:layout_marginTop="20dp"
-                                  android:layout_marginBottom="30dp"
+                                  android:layout_marginBottom="10dp"
                                   android:layout_height="wrap_content">
                         <ImageView android:layout_width="wrap_content"
                                    android:src="@drawable/email_logo"
@@ -96,6 +96,14 @@
                                   android:id="@+id/detalleAsesoria_correo"
                                   android:layout_height="wrap_content"/>
                     </LinearLayout>
+                    <Button android:layout_width="110dp"
+                            android:layout_gravity="center"
+                            android:id="@+id/btnDetalleAsesoria_contacto"
+                            android:background="@drawable/btn_gris"
+                            android:textColor="@color/colorTexto"
+                            android:text="contactar"
+                            android:layout_marginBottom="10dp"
+                            android:layout_height="wrap_content"/>
 
                 </LinearLayout>
 

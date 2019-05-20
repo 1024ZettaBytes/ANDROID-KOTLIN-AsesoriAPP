@@ -19,9 +19,15 @@
                   android:textColor="#ffff"
                   android:layout_height="wrap_content"/>
 
-    </LinearLayout>
+    </LinearLayout><ProgressBar android:layout_width="wrap_content"
+                                android:layout_gravity="center"
+                                android:id="@+id/pgsBarCargaMaterias"
+                                android:visibility="gone"
+                                android:layout_height="wrap_content"/>
+
     <ScrollView android:layout_width="match_parent"
                 android:layout_height="match_parent">
+
         <LinearLayout android:layout_width="match_parent"
                       android:orientation="vertical"
                       android:layout_marginTop="30dp"
@@ -34,6 +40,7 @@
                      android:layout_marginRight="20dp"
                      android:background="@color/colorGris"
                      android:padding="10dp"
+
                      android:popupBackground="@color/colorGris"
                      android:layout_height="wrap_content"></Spinner>
             <Spinner android:layout_width="match_parent"
@@ -41,6 +48,7 @@
                      android:layout_marginTop="10dp"
                      android:layout_marginLeft="20dp"
                      android:layout_marginRight="20dp"
+                     android:popupBackground="@color/colorGris"
                      android:background="@color/colorGris"
                      android:padding="10dp"
                      android:layout_height="wrap_content">
@@ -61,6 +69,11 @@
                               android:layout_weight="1"
                               android:layout_height="wrap_content"></LinearLayout>
             </LinearLayout>
+            <ProgressBar android:layout_width="wrap_content"
+                         android:id="@+id/pgsBarAgregaAsesoria"
+                         android:layout_gravity="center"
+                         android:visibility="gone"
+                         android:layout_height="wrap_content"/>
             <LinearLayout android:layout_width="match_parent"
                           android:orientation="horizontal"
                           android:layout_marginTop="60dp"

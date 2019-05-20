@@ -1,5 +1,7 @@
 package com.itson.asesoriapp
 
+import android.app.Activity
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -19,7 +21,7 @@ import kotlinx.android.synthetic.main.activity_horarios.*
 import android.support.annotation.NonNull
 import com.google.android.gms.tasks.OnFailureListener
 import com.google.android.gms.tasks.OnSuccessListener
-
+import com.google.firebase.auth.FirebaseAuth
 
 
 class AsesorActivity : AppCompatActivity() {
@@ -32,7 +34,8 @@ class AsesorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE); //will hide the title
-        getSupportActionBar()?.hide(); // hide the title bar
+        getSupportActionBar()?.hide();
+        // hide the title bar
         setContentView(R.layout.activity_asesor)
         campus = intent.getIntExtra("campus", 0)
         carrera = intent.getStringExtra("carrera")
@@ -43,13 +46,24 @@ class AsesorActivity : AppCompatActivity() {
         asesor_siglasCarrera.text = carrera
         asesor_correo.text = correoAsesor
         llenarTabla()
-        btnAgregarAsesoria.setOnClickListener() {
 
-            Toast.makeText(this, "AGREGADO", Toast.LENGTH_SHORT).show()
+        btnAgregarAsesoria.setOnClickListener() {
+            var intentAgregar = Intent(this, AgregarAsesoriaActivity::class.java)
+            intentAgregar.putExtra("campus", campus)
+            intentAgregar.putExtra("carrera", carrera)
+            intentAgregar.putExtra("correoAsesor", correoAsesor)
+            intentAgregar.putExtra("nombreAsesor", nombreAsesor)
+                intentAgregar.flags =
+                Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intentAgregar)
         }
 
         btnAsesor_cerrarSesion.setOnClickListener() {
-            finish()
+            FirebaseAuth.getInstance().signOut()
+            var intentLogin = Intent(this, LoginActivity::class.java)
+            intentLogin.flags =
+                Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intentLogin)
         }
 
     }
@@ -58,14 +72,10 @@ class AsesorActivity : AppCompatActivity() {
 
         pgsBarCargaAsesorias.visibility = View.VISIBLE
 
-        var asesorias = FirebaseFirestore.getInstance().collection("asesorias")
+        var asesorias = FirebaseFirestore.getInstance().collection("asesorias").whereEqualTo("asesor", correoAsesor)
         asesorias.get().addOnCompleteListener(OnCompleteListener<QuerySnapshot> { task ->
             if (task.isSuccessful) {
-                for(nColumna in listaNumero){
-                    asesor_tablaAsesorias.removeViewAt(nColumna+1)
-                }
-                listaNumero = ArrayList<Int>()
-                listaAsesorias = ArrayList<String>()
+
                 var i = 0
                 for (document in task.result) {
                     listaAsesorias.add(document.id)
@@ -100,6 +110,7 @@ class AsesorActivity : AppCompatActivity() {
                     asesor_tablaAsesorias.addView(tr)
                     i++
                 }
+
                 for (n in listaNumero) {
 
                     asesor_tablaAsesorias.getChildAt(n+1).setOnClickListener() {
@@ -116,6 +127,8 @@ class AsesorActivity : AppCompatActivity() {
         })
     }
 
+
+
     private fun borrarAsesoria(i: Int) {
         // Initialize a new instance of
         val builder = AlertDialog.Builder(this)
@@ -131,7 +144,15 @@ class AsesorActivity : AppCompatActivity() {
                 .delete()
                 .addOnSuccessListener(OnSuccessListener<Void> {
                     Toast.makeText(this, "Se eliminó la asesoría.", Toast.LENGTH_SHORT).show()
-                    llenarTabla()
+                    var intetnAsesor = Intent(this, AsesorActivity::class.java)
+                    intetnAsesor = Intent(this, AsesorActivity::class.java)
+                    intetnAsesor.putExtra("campus", campus)
+                    intetnAsesor.putExtra("carrera", carrera)
+                    intetnAsesor.putExtra("nombreAsesor", nombreAsesor)
+                    intetnAsesor.putExtra("correoAsesor", correoAsesor)
+                    intetnAsesor.flags =
+                        Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
+                    startActivity(intetnAsesor)
                 })
                 .addOnFailureListener(OnFailureListener { e ->
                     Toast.makeText(this, "ERROR: Verifique su conexión de red.", Toast.LENGTH_SHORT).show()
@@ -149,4 +170,6 @@ class AsesorActivity : AppCompatActivity() {
         // Display the alert dialog on app interface
         dialog.show()
     }
+
+
 }

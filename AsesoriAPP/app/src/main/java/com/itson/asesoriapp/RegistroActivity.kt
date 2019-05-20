@@ -123,13 +123,9 @@ var listaCarreras = ArrayList<String>()
                     db.collection(tipo).document(correo)
                         .set(usuario)
                         .addOnSuccessListener {
-                            Log.d("Bien", "DocumentSnapshot successfully written!")
                                 setResult(Activity.RESULT_OK)
                             FirebaseAuth.getInstance().signOut()
                             finish()
-                        }
-                        .addOnFailureListener {
-                                e -> Log.w("ERROR", "Error writing document", e)
                         }
 
                 } else {

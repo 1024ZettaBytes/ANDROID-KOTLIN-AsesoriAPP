@@ -56,25 +56,22 @@
                               android:textSize="26dp"
                               android:id="@+id/asesor_siglasCarrera"
                               android:layout_height="wrap_content"/>
-                    <LinearLayout android:layout_width="match_parent"
-                                  android:orientation="horizontal"
-                                  android:layout_marginTop="20dp"
-                                  android:layout_marginBottom="30dp"
-                                  android:layout_height="wrap_content">
+
                         <ImageView android:layout_width="wrap_content"
                                    android:src="@drawable/email_logo"
+                                   android:layout_gravity="center"
                                    android:layout_marginTop="10dp"
-                                   android:layout_marginLeft="10dp"
                                    android:layout_height="wrap_content"/>
                         <TextView android:layout_width="match_parent"
                                   android:text="ramirezcota.eduardo@gmail.com"
                                   android:layout_gravity="center"
-                                  android:layout_marginLeft="10dp"
+                                  android:textAlignment="center"
                                   android:textColor="#ffffff"
+                                  android:layout_marginBottom="30dp"
                                   android:textSize="18dp"
                                   android:id="@+id/asesor_correo"
                                   android:layout_height="wrap_content"/>
-                    </LinearLayout>
+
 
                 </LinearLayout>
                 <TextView android:layout_width="match_parent"
