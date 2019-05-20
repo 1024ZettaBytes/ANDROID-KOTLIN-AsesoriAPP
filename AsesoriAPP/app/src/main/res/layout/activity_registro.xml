@@ -20,7 +20,13 @@
                   android:layout_height="wrap_content"/>
 
     </LinearLayout>
+    <ProgressBar android:layout_width="wrap_content"
+    android:id="@+id/pgsBarCargaDatosregistro"
+                 android:visibility="gone"
+                 android:layout_gravity="center"
+                 android:layout_height="wrap_content"/>
     <ScrollView android:layout_width="match_parent"
+                android:id="@+id/scrollCamposRegistro"
                 android:layout_height="match_parent">
         <LinearLayout android:layout_width="match_parent"
                       android:orientation="vertical"
@@ -104,7 +110,7 @@
                       android:textSize="20dp"
                       android:layout_height="wrap_content"/>
             <EditText android:layout_width="match_parent"
-                      android:hint="Contraseña..."
+                      android:hint="Contraseña(8+ caractéres)..."
                       android:layout_marginTop="10dp"
                       android:layout_marginLeft="20dp"
                       android:layout_marginRight="20dp"
@@ -129,6 +135,11 @@
                       android:textColor="@color/colorTexto"
                       android:textSize="20dp"
                       android:layout_height="wrap_content"/>
+            <ProgressBar android:layout_width="wrap_content"
+                         android:visibility="gone"
+                         android:id="@+id/pgsBarRegistrar"
+                         android:layout_gravity="center"
+                         android:layout_height="wrap_content"/>
             <LinearLayout android:layout_width="match_parent"
                           android:orientation="horizontal"
                           android:layout_marginTop="20dp"
